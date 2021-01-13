@@ -16,16 +16,22 @@ public class SingleNumberHashMap {
             count.put(num, count.getOrDefault(num, 0) + 1);
         }
         
-        // #3. Traverse through the keys in map and check if count of number(key) is 1, return that number(key) as a single number, lookup in HashMap is constant time -> O (1)
-        for(Integer key : count.keySet()){
-            if(count.get(key) < 2){
-                return key;
-            }         
+     // #3. Traverse through the keys in map and check if count of number(key) is 1, return that number(key) as a single number, lookup in HashMap is constant time -> O (1)
+        //for(Integer key : count.keySet()){
+            //if(count.get(key) < 2){
+                //return key;
+            //}         
+        //}
+        
+        // #3. Traverse through 'N' elements in array again and check its count/frequency in a map, if count == 1, return that number as a single number
+        for(int i : nums){
+            if(count.get(i) == 1){
+                return i;
+            }
         }
         
         // #4. else, return -1
         return -1;
-        
     }
 	
 }
